@@ -1,0 +1,246 @@
+% This work is licensed under the Creative Commons Attribution-NonCommercial 4.0
+% International License. To view a copy of this license, visit
+% http://creativecommons.org/licenses/by-nc/4.0/ or send a letter to Creative
+% Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+\documentclass{sccs}
+\begin{document}
+
+% Front page designed in the class
+ \FrontPage
+
+% Two blank pages to start in an odd numbered page
+\cleardoublepage
+
+% Copyright text at the bottom of the page, defined in class
+\CopyrightPage
+
+
+\cleardoublepage
+
+%%IndeX
+\begingroup
+\hypersetup{linkcolor=black}
+\tableofcontents
+
+    \pdfbookmark{\contentsname}{toc}
+    \endgroup
+\clearpage
+
+% For the first stream of talks we redefine the foreground color
+\definecolor{fore}{HTML}{00BD66}
+
+% We redefine the geometry to fit more abstracts at the bottom of the page
+% (ugly)
+\newgeometry{bottom=0cm, top=2.6cm, left=4.1cm, right=3cm}
+
+
+% Numberless sections were used for the schedule titles
+% (there must be a better way to do this)
+% The section name indicates the Day (1,2,3,..etc)
+\normalsize
+%% Day {0}
+\section*{1}
+\phantomsection
+\addcontentsline{toc}{section}{\protect\numberline{}Day 1 Schedule}
+
+{\Huge\bfseries Morning}\\[0.5cm]
+
+% Room names are written as usual bold text
+{\Large\bfseries Room name 1}\\[0.5cm]
+% dailysched is a command that takes a list of abstract names and timings in the format:
+%   { abstract1/time, abstract2/time, abstract3/time, etc }
+% We provide the abstracts as hyperlinks so we can link them to the respective abstract
+% in the main body
+% The command will put the times in a black column and the abstract names in the
+% contiguous column. The time column colours were defind at the beginning of the section
+\dailysched{\hyperref[label1]{Abstract1}/11:00,%
+\hyperref[label2]{Abstract2}/11:10,%
+\hyperref[label3]{Abstract3}/11:20,%
+\hyperref[label4]{Abstract4}/11:30}
+
+% The stream in the second room
+\vspace{0.5cm}
+{\Large\bfseries Room name 2}\\[0.5cm]
+\dailysched{\hyperref[label1]{Abstract1}/11:00,%
+\hyperref[label2]{Abstract2}/11:10,%
+\hyperref[label3]{Abstract3}/11:20,%
+\hyperref[label4]{Abstract4}/11:30}
+% Geometry is restored here since we ony needed it for the Day title
+\restoregeometry
+
+\clearpage
+
+% The afternoon sections
+{\Huge\bfseries Afternoon}\\[0.5cm]
+
+{\Large\bfseries Room name 1}\\[0.5cm]
+\dailysched{\hyperref[label1]{Abstract1}/11:00,%
+\hyperref[label2]{Abstract2}/11:10,%
+\hyperref[label3]{Abstract3}/11:20,%
+\hyperref[label4]{Abstract4}/11:30}
+
+\vspace{0.5cm}
+{\Large\bfseries Room name 2}\\[0.5cm]
+\dailysched{\hyperref[label1]{Abstract1}/11:00,%
+\hyperref[label2]{Abstract2}/11:10,%
+\hyperref[label3]{Abstract3}/11:20,%
+\hyperref[label4]{Abstract4}/11:30}
+
+\clearpage
+
+% We can keep repeating the same for more sessions, i.e. Late Afternoon etc
+% Now we will change the color for the second day stream
+
+\definecolor{fore}{HTML}{F35100}
+
+% again, change the geometry to fit more abstracts. It is not necessary
+\newgeometry{bottom=0cm, top=2.6cm, left=4.1cm, right=3cm}
+
+\normalsize
+%% Day {2}
+\section*{2}
+% Add to the TOC
+\phantomsection
+\addcontentsline{toc}{section}{\protect\numberline{}Day 2 Schedule}
+
+{\Huge\bfseries Morning}\\[0.5cm]
+
+% First room stream
+{\Large\bfseries Room name 1}\\[0.5cm]
+\dailysched{\hyperref[label1]{Abstract1}/11:00,%
+\hyperref[label2]{Abstract2}/11:10,%
+\hyperref[label3]{Abstract3}/11:20,%
+\hyperref[label4]{Abstract4}/11:30}
+
+% The stream in the second room
+\vspace{0.5cm}
+{\Large\bfseries Room name 2}\\[0.5cm]
+\dailysched{\hyperref[label1]{Abstract1}/11:00,%
+\hyperref[label2]{Abstract2}/11:10,%
+\hyperref[label3]{Abstract3}/11:20,%
+\hyperref[label4]{Abstract4}/11:30}
+% Geometry is restored here since we ony needed it for the Day title
+\restoregeometry
+
+{\Huge\bfseries Afternoon}\\[0.5cm]
+
+{\Large\bfseries Room name 1}\\[0.5cm]
+\dailysched{\hyperref[label1]{Abstract1}/11:00,%
+\hyperref[label2]{Abstract2}/11:10,%
+\hyperref[label3]{Abstract3}/11:20,%
+\hyperref[label4]{Abstract4}/11:30}
+
+\vspace{0.5cm}
+{\Large\bfseries Room name 2}\\[0.5cm]
+\dailysched{\hyperref[label1]{Abstract1}/11:00,%
+\hyperref[label2]{Abstract2}/11:10,%
+\hyperref[label3]{Abstract3}/11:20,%
+\hyperref[label4]{Abstract4}/11:30}
+
+\clearpage
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&&&&
+% We change the color for the poster sections title
+% (we cannot use the numberless section, so we put it here manually)
+ \definecolor{fore}{HTML}{00BACA}
+
+    \begin{tikzpicture}[remember picture, overlay]
+  	\fill[back]
+ 	(0, 0)%
+        rectangle%
+        (13.95, -3);%
+        \fill[fore]
+        (-3, 0)%
+        rectangle%
+        (-0.05, -3);%
+        \node[rectangle,minimum width=4cm, minimum height=4cm, text=fore]%
+        at (5, -1.5) {\HUGE\ExtraLight Poster Schedule};%
+        %
+    \end{tikzpicture}%
+
+
+    \phantomsection
+    \addcontentsline{toc}{section}{\protect\numberline{}Poster Schedule}
+
+    \vspace{4.5cm}
+
+
+% Posters are just arranged as a list (simple)
+
+\normalsize
+
+{\Huge\bfseries Group 1 (Day 1, 10:15)}\\[0.5cm]
+\begin{itemize}
+\item \hyperref[label1]{Poster name 1} (Author 1)%%
+\item \hyperref[label2]{Poster name 2} (Author 2)%%
+\item \hyperref[label3]{Poster name 3} (Author 3)%%
+\end{itemize}
+
+\normalsize
+
+{\Huge\bfseries Group 2 (Day 2, 10:15)}\\[0.5cm]
+\begin{itemize}
+\item \hyperref[label1]{Poster name 1} (Author 1)%%
+\item \hyperref[label2]{Poster name 2} (Author 2)%%
+\item \hyperref[label3]{Poster name 3} (Author 3)%%
+\end{itemize}
+
+% We finish the simple poster section
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Redefine the color for the abstracts (it is like red)
+ \definecolor{fore}{HTML}{DE3523}
+
+ \normalsize
+
+ % Section name in a odd numbered page,
+ % with the big picture in a whole page (that is why we clear page at the end)
+ \cleardoublepage
+\section{Conference subject 1}
+ \clearpage
+
+\label{sec:sec1}
+
+% The insert abstract command is defined in the class but it is pretty straightforward
+% Name, Author, Affiliation, Email (we use hyperref), the abstract itself, the label
+% and the presentation format (Oral, Poster or Both, or anything possible)
+
+\InsertAbstract{Abstract name 1}%
+{Author 1}%
+{University name 1}%
+{\href{mailto:email1@myemail.com}{email1@myemail.com}}%
+{\lipsum[2]}%
+{label1}%
+{ORAL and POSTER}%
+
+\InsertAbstract{Abstract name 2}%
+{Author 2}%
+{University name 2}%
+{\href{mailto:email2@myemail.com}{email1@myemail.com}}%
+{\lipsum[2]}%
+{label2}%
+{ORAL and POSTER}%
+
+
+
+ \cleardoublepage
+\section{Conference subject 2}
+ \clearpage
+
+\label{sec:sec2}
+
+
+\InsertAbstract{Very long abstract name  for the third registered speaker at the conference}%
+{Author 3}%
+{University name 3}%
+{\href{mailto:email3@myemail.com}{email1@myemail.com}}%
+{\lipsum[2]}%
+{label3}%
+{POSTER Group 1}%
+
+
+% We can repeat this process for every person registered at the conference
+% database. The idea is to script this process
+
+\end{document}
